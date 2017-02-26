@@ -1,0 +1,29 @@
+String temp = "";
+       String arrow ="";
+       String ss="";
+       boolean bracket  = false;
+        System.out.println("S= "+s);
+        for(int i =0;i<s.length();i++)
+        {
+            temp = temp +s.charAt(i);
+             if((temp.equals("-")||temp.equals(">")))
+            {  arrow = arrow+ s.charAt(i);
+            if(arrow.equals("->"))
+            {
+                bracket = true;
+            }
+            else
+                continue;
+            }
+            if(bracket||temp.equals(" "))
+            {
+               ss = ss+ "(";
+               arrow ="";
+               temp="";
+               bracket= false;
+            }
+            else
+            {
+                ss = ss+temp;
+            }
+        }
